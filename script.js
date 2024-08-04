@@ -26,14 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
         { question: "I allow for Maintenance of manufacturing and analytical records of drugs. Which schedule am I?", answer: "Schedule U" },
         { question: "I am for the standards for colours used in drugs and cosmetics. Which schedule am I?", answer: "Schedule Q" },
         { question: "I provide the standards for condoms and other mechanical contraceptives. Which schedule am I?", answer: "Schedule R" },
-        { question: "I allow for Maintenance of manufacturing, raw material and analytical records of cosmetics. Which schedule am I?", answer: "Schedule U1" }, 
+        { question: "I allow for Maintenance of manufacturing, raw material and analytical records of cosmetics. Which schedule am I?", answer: "Schedule U1" },
         { question: "I set the standards for cosmetics. Which schedule am I?", answer: "Schedule S" },
         { question: "I give Requirements for factory premises and manufacture of Ayurvedic, Siddha and Unani products. Which schedule am I?", answer: "Schedule T" },
         { question: "I provide the Regulations regarding retail package size of various drugs. Which schedule am I?", answer: "Schedule P1" },
         { question: "I extend the standards of Schedule C for other drugs. Which schedule am I?", answer: "Schedule C1" },
         { question: "I list the drugs which can be marketed under generic names only. Which schedule am I?", answer: "Schedule W" },
         { question: "I set the standards for biological products. Which schedule am I?", answer: "Schedule C" },
-        { question: "I ENSURE that antibiotics are not missused. Which schedule am I?", answer: "Schedule HX" }
+        { question: "I ENSURE that antibiotics are not misused. Which schedule am I?", answer: "Schedule HX" }
     ];
 
     const riddlesContainer = document.getElementById('riddles-container');
@@ -124,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if all questions are answered and display leaderboard
         const checkAnswers = () => {
             const feedbacks = document.querySelectorAll('.feedback');
-            if (feedbacks.length === 10) {
+            const allAnswered = Array.from(feedbacks).every(feedback => feedback.style.display === 'block');
+            if (allAnswered) {
                 leaderboardButton.classList.remove('hidden');
             }
         };
