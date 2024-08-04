@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddles on Schedules</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1, h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .start-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .riddle {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .riddle p {
+            margin: 0 0 10px 0;
+        }
+        .answer, .input-answer {
+            margin-top: 10px;
+        }
+        .input-answer {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 80%;
+        }
+        .popup h3 {
+            margin: 0 0 10px 0;
+        }
+        .popup p {
+            margin: 0 0 20px 0;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .footer p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .feedback {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container start-page" id="start-page">
+        <h2>LET'S TEST YOUR KNOWLEDGE OF SCHEDULES</h2>
+        <label for="roll-number">Enter your roll number:</label>
+        <input type="text" id="roll-number" placeholder="Your roll number" />
+        <button onclick="startQuiz()">Let's Begin</button>
+    </div>
+    <div class="container hidden" id="riddles-container">
+        <h1>Riddles on Schedules</h1>
+        <!-- Riddles will be dynamically inserted here -->
+        <div class="footer">
+            <p>Lalit Nimekar Roll No 36</p>
+            <p>Maharshi Ahirrao Roll No 37</p>
+            <p>Third Year</p>
+            <p>Dr. D. Y. Patil College of Pharmacy, Akurdi, Pune</p>
+        </div>
+    </div>
+    <div class="overlay hidden" id="overlay"></div>
+    <div class="popup hidden" id="popup">
+        <h3>Explanation</h3>
+        <p id="popup-text"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
